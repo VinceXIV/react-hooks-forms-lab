@@ -22,6 +22,9 @@ function ShoppingList({ items }) {
     }
   }
 
+  function onItemFormSubmit(newItem){
+    setItemsToUse([...itemsToUse, newItem])
+  }
 
   const itemsToDisplay = itemsToUse.filter((item) => {
     if (selectedCategory === "All") return true;
@@ -31,7 +34,7 @@ function ShoppingList({ items }) {
 
   return (
     <div className="ShoppingList">
-      <ItemForm />
+      <ItemForm onItemFormSubmit={onItemFormSubmit}/>
       <Filter onCategoryChange={handleCategoryChange} onSearchChange={handleSearch} />
       <ul className="Items">
         {itemsToDisplay.map((item) => (
