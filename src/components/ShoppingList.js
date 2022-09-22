@@ -12,7 +12,6 @@ function ShoppingList({ items }) {
   }
 
   function handleSearch(event){
-    console.log("handle search: ", event.target.value)
     const inputValue = event.target.value
     if(!inputValue){
       setItemsToUse(items)
