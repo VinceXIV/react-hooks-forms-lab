@@ -6,6 +6,7 @@ function ItemForm(props) {
   const [name, setName] = useState("")
 
   function handleSubmit(event){
+    event.preventDefault()
     props.onItemFormSubmit(
       {
         id: uuid(),
